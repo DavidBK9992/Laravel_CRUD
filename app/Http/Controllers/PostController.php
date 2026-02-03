@@ -14,7 +14,7 @@ class PostController extends Controller
     public function index()
     {
         // Order Posts by latest to oldest update and id highest to lowest
-        $posts = Post::orderByDesc('updatet_at')->orderByDesc('id')->paginate(10);
+        $posts = Post::orderByDesc('updatet_at')->orderByDesc('id')->paginate(9);
 
         return view('posts.index', [
             'posts' => $posts,

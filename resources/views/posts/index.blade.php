@@ -10,7 +10,7 @@
 
         <!-- Table -->
         <div class="w-full overflow-x-hidden">
-            <table class=" min-w-full border border-gray-200 divide-y divide-gray-200 table-fixed">
+            <table class="shadow-sm my-4 min-w-full border border-gray-200 divide-y divide-gray-200 table-fixed">
                 <!-- Table Header -->
                 <thead class="bg-gray-50">
                     <tr>
@@ -20,13 +20,13 @@
                         <th class="w-20 px-2 py-2 text-left text-sm font-semibold text-gray-700">Image</th>
                         <th class="w-20 px-2 py-2 text-left text-sm font-semibold text-gray-700">Status</th>
                         <th class="w-28 px-2 py-2 text-left text-sm font-semibold text-gray-700">updated_at</th>
-                        <th class="w-40 px-2 py-2 text-left text-sm font-semibold text-gray-700">Actions</th>
+                        <th class="w-36 px-4 py-2 text-left text-sm font-semibold text-gray-700">Actions</th>
                     </tr>
                 </thead>
                 <!-- Table Body -->
                 <tbody class="bg-white divide-y divide-gray-200">
                     @foreach ($posts as $post)
-                    <tr class="hover:bg-gray-50 align-top">
+                    <tr class="hover:bg-gray-50 align-center">
                         <td class="px-2 py-2 text-sm text-gray-900">{{ $post->id }}</td>
 
                         <td class="px-2 py-2 text-sm text-gray-900 break-words">
@@ -73,14 +73,14 @@
                             ({{ $post->updated_at->format('H:i:s') }})
                         </td>
 
-                        <td class="pr-6 pl-2 py-2 text-sm space-x-1 flex justify-between">
+                        <td class="pr-2 pl-2 py-2 text-sm space-x-1 flex justify-around  items-center">
                             <!-- Edit Link -->
-                            <a href="{{ route('posts.edit', $post) }}" class="text-blue-600 hover:underline">Edit</a>
+                            <a href="{{ route('posts.edit', $post) }}" class="border p-1.5 rounded-md text-blue-600 bg-blue-50 hover:bg-blue-100 border-blue-200">Edit</a>
                             <!-- Show Link -->
-                            <a href="{{ route('posts.show', $post) }}" class="text-gray-600 hover:underline">Show</a>
+                            <a href="{{ route('posts.show', $post) }}" class="border p-1.5 rounded-md text-gray-600 bg-green-50 hover:bg-green-100 border-green-300">Show</a>
                             <!-- Delete Button that opens Delete Confirmation Modal -->
                             <button type="button"
-                                class="text-red-600 hover:underline delete-button"
+                                class="text-red-600 p-1.5 hover:bg-red-100 delete-button border border-red-300 rounded-md bg-red-50"
                                 data-id="{{ $post->id }}"
                                 data-title="{{ $post->post_title }}">
                                 Delete
